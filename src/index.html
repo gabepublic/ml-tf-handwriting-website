@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>MNIST Canvas</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="mnist">
+  <meta name="description" content="Handwriting recognition">
+  
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="./favicon-32px.png">
+
+  <script src="/mnist.js"></script>
+  <script async src="/canvas_mousetouch.js"></script>
+  <!-- Prior to upgrade -->
+  <!--
+  <script async src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  -->
+  <script async src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.19.0/dist/tf.min.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body onload="initCanvas(); init(); ">
+  <div id="digitpad-container">
+    <div id="welcome">
+      <h2 id="welcome_msg" class="security_msg"></h2>
+    </div>
+    <div class="canvas">
+      <canvas id="digitpad" height="280" width="280"></canvas>
+    </div>
+    <div class="buttons">
+      <button id="predict-button-local" class="button">To-Digit</button>
+      <button class="button" onclick="clearCanvas()">Clear</button>
+      <a id="imageDownload" download="digit.png">
+          <button type="button" class="button" onClick="download()">Download</button>
+      </a>
+    </div>
+    <div id="prediction">
+      <p id="prediction_msg" class="prediction_msg"></p>
+    </div>
+    <div>
+      <input type="number" id="number" style="margin-left: 20px;">
+    </div>
+  </div>  
+</body>
+</html>
+</div>
